@@ -11,13 +11,22 @@ Now we can deploy the control plane to kubernetes cluster, but some developers t
 
 # Detailed design
 
-1. Control Plane on docker-compose
+## 1. Control Plane on docker-compose
+    ### Note:
     - Developers can deploy control plane on a single machine.
     - Developers do not have to prepare a datastore and a filestore by themselves or they can easily use a database or a filestore on local machine.
+    ### Production Architecture
+    - Port-forward from docker-compose to your machine to enable external client access to pipecd-gateway container.
+    ![image](assets/control-plane-on-docker-compose.jpg)
     
-2. Control Plane on managed container services (ex. ECS)
-    - Pipecd can give the way to deploy a control plane as Terraform template.
+    
+## 2. Control Plane on managed container services (ex. ECS)
+    ### Note:
+    - Pipecd give the abstruct architecture for ECS.
+        - Give a sample repositpry that describes architecure by using Terraform.
     - They can easily use the managed database or storage system on cloud as datastore and filestore.
+    
+    ### Production Architecture on ECS
     ![image](assets/control-plane-on-aws.jpg)
     
     Note:
@@ -52,7 +61,7 @@ Now we can deploy the control plane to kubernetes cluster, but some developers t
 
 # Alternatives
 
-1. Control Plane without container image
+Control Plane without container image
     - This alternative supports deploy control plane as a binary such as Piped.
     - It is stressful for developers to set up networking by themselves.
 
