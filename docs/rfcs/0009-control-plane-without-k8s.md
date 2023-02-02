@@ -23,7 +23,8 @@ Now we can deploy the control plane to kubernetes cluster, but some developers t
 ## 2. Control Plane on managed container services (ex. ECS)
     ### Note:
     - Pipecd give the abstruct architecture for ECS.
-        - Give a sample repositpry that describes architecure by using Terraform.
+        - Give a [sample repositpry](https://github.com/pipe-cd/control-plane-aws-ecs-terraform-demo) that describes architecure by using Terraform. 
+        - The architectures are different by each project, so create your best architecture with refering to this repository and docker-compose file.
     - They can easily use the managed database or storage system on cloud as datastore and filestore.
     
     ### Production Architecture on ECS
