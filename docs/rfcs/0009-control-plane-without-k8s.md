@@ -33,6 +33,7 @@ Now we can deploy the control plane to kubernetes cluster, but some developers t
     - Devide a pipecd-server and a pipecd-ops to different services because they have the same port and have different authorization.
     - Pay attention to brocking public access to s3.
         - Add IAM role to ECS to access S3.
+    - Make two type of target group for both of HTTP and GRPC. Use HTTPS for ALB listners because GRPC listner needs HTTPS.
     - Set up before containers start to run so that pipecd can use config files and encryption key. You can choose from 3 options as bellow.
         - Use Secrets Manager as config store.
         ```
